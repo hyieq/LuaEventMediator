@@ -36,7 +36,7 @@ Super simple!
 
 ## Documentation
 
-- function EventObj:bindHost()
+function EventObj:bindHost()
 
 
     local NodeA = class("NodeA", CocosNode)
@@ -58,7 +58,7 @@ Super simple!
         -- end
     end
 
-- function EventMediator.inject()
+function EventMediator.inject()
 
 
     local NodeA = class("NodeA", CocosNode)
