@@ -8,6 +8,13 @@ local getUniqueId = function(obj)
     return tonumber(tostring(obj):match(':%s*[0xX]*(%x+)'), 16)
 end
 
+local instanceExist = function(target)
+    if target and type(target) ~= 'userdata' then
+        return true
+    end
+    return not tolua.isnull(target)
+end
+
 local EventObj = class('EventObj')
 
 function EventObj:ctor(name, callback, priority)
