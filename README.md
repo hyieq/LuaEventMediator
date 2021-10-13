@@ -45,14 +45,14 @@ function EventObj:bindHost()
         NodeA.super.ctor(self)
 
         self.listeners = {
-            eventMediator:listener("EventName",function() end):bindHost()
+            eventMediator:listener("EventName",function() end):bindHost(self)
         }
     end
 
     function NodeA:onExit()
         NodeA.super.onExit(self)
 
-        -- Once bindHost, you dont have to use "removeListener" like below:
+        -- Once bindHost, you can skip the "removeListener things" like below:
         -- for _,v in pairs(self.listeners) do
         --      eventMediator:removeListener(v)                
         -- end
